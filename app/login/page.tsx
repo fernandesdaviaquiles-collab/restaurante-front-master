@@ -4,6 +4,7 @@
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import Swal from "sweetalert2"
+import Image from "next/image"
 
 
 export default function Login(){
@@ -35,7 +36,8 @@ export default function Login(){
         <main className="flex min-h-screen items-center justify-center bg-red-900">
             <div className="w-full max-w-md rounded-2xl text-black bg-yellow-100 p-8 shadow-lg">
                 <h1 className="mb-8 text-center text-black font-bold ">Área Administrativa</h1>
-            
+
+               <Image src="/restaurante-logo2.png" alt="Logo" width={150} height={150} className="mx-auto mb-4 rounded-full" />
             
             <p className="mb-8 text-center text-gray-900 ">Faça login para acessar o painel</p>
             
