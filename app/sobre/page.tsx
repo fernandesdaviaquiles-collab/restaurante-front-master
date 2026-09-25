@@ -22,7 +22,7 @@ export default function SobrePage() {
           {/* Imagem */}
           <div className="overflow-hidden rounded-2xl shadow-lg">
             <Image
-              src="/sobre-restaurante.png"
+              src="/Sobre-restaurante.png"
               alt="Restaurante"
               width={600}
               height={400}

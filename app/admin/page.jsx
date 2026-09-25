@@ -11,13 +11,13 @@ export default function AdminPage() {
     const [preco, setPreco] = useState("")
     const [imagem, setImagem] = useState("")
 
-    async function cadastrarLanche() {
+    async function cadastrarLanche(e) {
 
         e.preventDefault()
 
         try {
 
-            const response = await fetch("http://localhost:3001/produtos", {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/produtos`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -57,7 +57,7 @@ export default function AdminPage() {
           
             <div className="p-8">
 
-                <div className="mx-auto max-w-xl rounded-lg text-black bg-yellow-100 p-8 shadow">
+                <div className="mx-auto max-w-xl rounded-lg text-red-950 bg-yellow-100 p-8 shadow">
 
                     <h1 className="mb-6 text-3xl font-bold">
                         Cadastrar Lanche

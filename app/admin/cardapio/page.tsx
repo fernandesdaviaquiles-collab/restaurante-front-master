@@ -20,7 +20,7 @@ export default function CardapioAdmin() {
     async function carregarProdutos() {
         try {
             const response = await fetch(
-                "http://localhost:3001/produtos"
+                `${process.env.NEXT_PUBLIC_API_URL}/produtos/`
             )
 
             if (!response.ok) {
@@ -66,7 +66,8 @@ export default function CardapioAdmin() {
         try {
 
             const response = await fetch(
-                `http://localhost:3001/produtos/${id}`,
+
+                `${process.env.NEXT_PUBLIC_API_URL}/produtos/${id}`,
                 {
                     method: "DELETE"
                 }
@@ -115,17 +116,17 @@ export default function CardapioAdmin() {
     }
 
     return (
-        <main className="min-h-screen bg-gray-100 p-8">
+        <main className="min-h-screen bg-red-900 p-8">
 
             <div className="mx-auto max-w-6xl">
 
-                <h1 className="mb-6 text-3xl font-bold">
+                <h1 className="mb-6 text-3xl text-yellow-200 font-bold">
                     Gerenciar Cardápio
                 </h1>
 
                 {produtos.length === 0 ? (
 
-                    <div className="rounded-lg bg-white p-8 text-center shadow">
+                    <div className="rounded-lg bg-yellow-100 p-8 text-center shadow">
 
                         <p className="text-gray-500">
                             Nenhum produto cadastrado
@@ -141,7 +142,7 @@ export default function CardapioAdmin() {
 
                             <div
                                 key={produto.id}
-                                className="overflow-hidden rounded-lg bg-white shadow"
+                                className="overflow-hidden rounded-lg bg-yellow-100 text-red-600 shadow"
                             >
 
                                 {produto.imagem && (
@@ -163,7 +164,7 @@ export default function CardapioAdmin() {
                                         {produto.descricao}
                                     </h2>
 
-                                    <p className="mt-3 text-lg text-gray-500">
+                                    <p className="mt-3 text-lg text-black">
                                         {produto.categoria}
                                     </p>
 
@@ -172,7 +173,7 @@ export default function CardapioAdmin() {
                                     </p>
 
                                     <button
-                                        className="mt-4 w-full rounded-lg bg-red-600 px-4 py-2 font-semibold text-white hover:bg-red-700"
+                                        className="mt-4 w-full rounded-lg bg-orange-600 px-4 py-2 font-semibold text-white hover:bg-orange-700"
                                         onClick={() =>
                                             excluirProduto(produto.id)
                                         }
